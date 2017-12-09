@@ -29,20 +29,10 @@ class Object {
     // Load image
     img = loadImage(image);
     img.resize(0, 280);
-    
-    if (random(0, 2) > 1){
-      objects[i].direction = "fall";
-    }
-    
   }
 
   void fall(){
      ypos += yspeed;
-     image(img, xpos, ypos);
-  }
-  
-  void rise(){
-     ypos -= yspeed;
      image(img, xpos, ypos);
   }
   
@@ -53,11 +43,7 @@ void draw() {
   
   // Render all created objects
   for( int i = 0; i < objects.length; i++){
-    println(random(0, 2));
-    if (random(0, 2) > 1){
       objects[i].fall();
-    }
-    //objects[i].rise();
   }
   
 }
